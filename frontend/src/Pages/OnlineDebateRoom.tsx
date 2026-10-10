@@ -2300,18 +2300,18 @@ const OnlineDebateRoom = (): JSX.Element => {
               </p>
 
               <div className="flex items-center gap-2">
-                <div className="flex-1 border border-border rounded-md px-3 py-2 bg-muted">
-                  <span className="text-sm text-muted-foreground mr-2">
+                <div className="flex-1 min-w-0 border border-border rounded-md px-3 py-2 bg-muted overflow-x-auto">
+                  <span className="text-sm text-muted-foreground mr-2 whitespace-nowrap">
                     Room Code:
                   </span>
 
-                  <span className="font-semibold tracking-wider">{roomId}</span>
+                  <span className="font-semibold tracking-wider break-all">{roomId}</span>
                 </div>
 
                 <Button
                   type="button"
                   onClick={handleCopyRoomId}
-                  className="px-4"
+                  className="px-4 flex-shrink-0"
                 >
                   {roomIdCopied ? "Copied" : "Copy"}
                 </Button>
@@ -2608,7 +2608,7 @@ const OnlineDebateRoom = (): JSX.Element => {
               autoPlay
               muted
               playsInline
-              className="w-full h-48 sm:h-64 md:h-80 object-cover"
+              className="w-full h-36 sm:h-64 md:h-80 object-cover"
             />
             {/* Speaking Controls */}
             <div className="mt-3 flex flex-col items-center gap-2">

@@ -584,13 +584,13 @@ const TeamBuilder: React.FC = () => {
                             )}
                           </div>
                         )}
-                        <div className="flex flex-wrap items-center gap-2 mt-2 text-sm">
-                          <div className="flex items-center gap-1 text-gray-600 dark:text-muted-foreground [.contrast_&]:text-foreground min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mt-2 text-sm w-full">
+                          <div className="flex items-center gap-1 text-gray-600 dark:text-muted-foreground [.contrast_&]:text-foreground min-w-0 flex-1">
                             <span className="font-medium flex-shrink-0">
                               <FaCrown className="inline text-yellow-500" />{" "}
                               Captain:
                             </span>
-                            <span>{team.captainEmail}</span>
+                            <div className="overflow-x-auto whitespace-nowrap pb-0.5 custom-scrollbar">{team.captainEmail}</div>
                           </div>
                           {team.code && (
                             <div className="flex items-center gap-1 flex-shrink-0">
@@ -790,11 +790,11 @@ const TeamBuilder: React.FC = () => {
                     {memberProfile.displayName[0]}
                   </AvatarFallback>
                 </Avatar>
-                <div>
-                  <h3 className="text-xl font-bold">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xl font-bold truncate">
                     {memberProfile.displayName}
                   </h3>
-                  <p className="text-sm text-gray-500">{memberProfile.email}</p>
+                  <div className="text-sm text-gray-500 overflow-x-auto whitespace-nowrap pb-0.5 custom-scrollbar">{memberProfile.email}</div>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -928,12 +928,12 @@ const TeamBuilder: React.FC = () => {
                               </Badge>
                             )}
                           </div>
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-1">
-                              <FaCrown className="text-primary" />
-                              <span className="font-medium">
+                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground w-full">
+                            <div className="flex items-center gap-1 min-w-0 max-w-[200px] sm:max-w-xs">
+                              <FaCrown className="text-primary flex-shrink-0" />
+                              <div className="font-medium overflow-x-auto whitespace-nowrap pb-0.5 custom-scrollbar">
                                 {team.captainEmail}
-                              </span>
+                              </div>
                             </div>
                             <div className="flex items-center gap-1">
                               <FaChartLine className="text-primary" />

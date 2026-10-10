@@ -705,7 +705,7 @@ const TeamBuilder: React.FC = () => {
                               handleViewMemberProfile(member.userId, team)
                             }
                           >
-                            <div className="flex items-center gap-3 overflow-hidden">
+                            <div className="flex items-center gap-3 overflow-hidden min-w-0">
                               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                                 {member.userId === team.captainId ? (
                                   <FaCrown className="text-yellow-500 w-4 h-4" />
@@ -731,7 +731,7 @@ const TeamBuilder: React.FC = () => {
                                     e.stopPropagation();
                                     handleRemoveMember(team.id, member.userId);
                                   }}
-                                  className="ml-2 p-1.5 text-destructive bg-destructive/10 rounded hover:bg-destructive hover:text-destructive-foreground opacity-0 group-hover:opacity-100 transition-all flex-shrink-0"
+                                  className="ml-2 p-1.5 text-destructive bg-destructive/10 rounded hover:bg-destructive hover:text-destructive-foreground opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 transition-all flex-shrink-0"
                                   title="Remove member"
                                 >
                                   <FaTimes className="w-3.5 h-3.5" />
